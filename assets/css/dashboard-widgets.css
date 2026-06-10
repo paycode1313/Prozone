@@ -1,0 +1,581 @@
+/* Dashboard Widgets CSS - Premium Design */
+
+/* Widget Grid Layouts */
+.widget-grid-2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.widget-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.widget-grid-1-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.widget-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Daily Challenge Widget */
+.daily-challenge-widget {
+    background: linear-gradient(145deg, 
+        rgba(124, 58, 237, 0.12) 0%, 
+        rgba(139, 92, 246, 0.08) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 18px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-challenge-widget::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.challenge-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.challenge-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.challenge-title {
+    flex: 1;
+}
+
+.challenge-title h4 {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.challenge-title span {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.challenge-timer {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.challenge-content {
+    position: relative;
+    z-index: 1;
+}
+
+.challenge-task {
+    background: rgba(15, 15, 35, 0.5);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.challenge-task p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.challenge-reward {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reward-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reward-xp {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.btn-challenge {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-challenge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Streak Widget */
+.streak-widget {
+    background: linear-gradient(145deg, 
+        rgba(251, 146, 60, 0.08) 0%, 
+        rgba(245, 158, 11, 0.12) 100%);
+    border: 1px solid rgba(251, 146, 60, 0.2);
+    border-radius: 18px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.streak-flame {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+    animation: flame-dance 1s ease-in-out infinite alternate;
+}
+
+@keyframes flame-dance {
+    from { transform: scale(1) rotate(-2deg); }
+    to { transform: scale(1.05) rotate(2deg); }
+}
+
+.streak-count {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fb923c, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.streak-label {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.streak-calendar {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+}
+
+.streak-day {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.streak-day.active {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: #1e1e32;
+}
+
+.streak-day.inactive {
+    background: rgba(100, 116, 139, 0.2);
+    color: #64748b;
+}
+
+.streak-day.today {
+    border: 2px solid #f59e0b;
+    color: #f59e0b;
+}
+
+/* Activity Feed Widget */
+.activity-feed-widget {
+    background: linear-gradient(145deg, 
+        rgba(30, 30, 55, 0.95) 0%, 
+        rgba(35, 35, 65, 0.9) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.widget-header h4 {
+    color: #e2e8f0;
+    font-size: 1rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.widget-header a {
+    color: #8b5cf6;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.widget-header a:hover {
+    color: #a78bfa;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(15, 15, 35, 0.4);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.activity-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.activity-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-text {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.activity-text strong {
+    color: #e2e8f0;
+}
+
+.activity-text .highlight {
+    color: #a78bfa;
+}
+
+.activity-time {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Quick Actions Widget */
+.quick-actions-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.quick-action {
+    background: rgba(30, 30, 50, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.quick-action:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.quick-action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-size: 1.25rem;
+}
+
+.quick-action-icon.purple { background: rgba(139, 92, 246, 0.2); }
+.quick-action-icon.green { background: rgba(16, 185, 129, 0.2); }
+.quick-action-icon.blue { background: rgba(59, 130, 246, 0.2); }
+.quick-action-icon.yellow { background: rgba(245, 158, 11, 0.2); }
+
+.quick-action span {
+    color: #cbd5e1;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Leaderboard Preview Widget */
+.leaderboard-preview-widget {
+    background: #1e1e32;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem;
+    background: rgba(15, 15, 35, 0.4);
+    border-radius: 8px;
+}
+
+.leaderboard-item.highlighted {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.leaderboard-rank {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.leaderboard-rank.gold { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1e1e32; }
+.leaderboard-rank.silver { background: linear-gradient(135deg, #94a3b8, #64748b); color: #1e1e32; }
+.leaderboard-rank.bronze { background: linear-gradient(135deg, #cd7f32, #b87333); color: #1e1e32; }
+.leaderboard-rank.normal { background: rgba(100, 116, 139, 0.3); color: #94a3b8; }
+
+.leaderboard-user {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.leaderboard-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: white;
+    overflow: hidden;
+}
+
+.leaderboard-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leaderboard-user-name {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.leaderboard-xp {
+    color: #a78bfa;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Motivational Quote Widget */
+.quote-widget {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.15) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.quote-text {
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+}
+
+.quote-author {
+    color: #8b5cf6;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Skill Progress Widget */
+.skill-progress-widget {
+    background: #1e1e32;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skill-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+}
+
+.skill-name {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.skill-level {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.skill-bar {
+    height: 6px;
+    background: rgba(100, 116, 139, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.skill-progress.html { background: linear-gradient(90deg, #e34c26, #f06529); }
+.skill-progress.css { background: linear-gradient(90deg, #264de4, #2965f1); }
+.skill-progress.js { background: linear-gradient(90deg, #f0db4f, #f7df1e); }
+.skill-progress.python { background: linear-gradient(90deg, #306998, #ffd43b); }
+.skill-progress.php { background: linear-gradient(90deg, #777bb4, #8892be); }
+
+/* Widget Grid Responsive */
+@media (max-width: 1200px) {
+    .widget-grid-2-1 { grid-template-columns: 1fr !important; }
+    .widget-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    .widget-grid-1-2 { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+    .widget-grid-4 { grid-template-columns: 1fr !important; }
+    .quick-actions-widget { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,344 @@
+/* Responsive Design Utilities for Prozone */
+
+/* Import Mobile-specific styles */
+@import url('mobile.css');
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   - Mobile: < 640px
+   - Tablet: 640px - 1024px
+   - Desktop: > 1024px
+   ============================================ */
+
+/* Base Responsive Reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container Responsive */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* Responsive Grid System */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+    .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .lg\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .md\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .sm\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+}
+
+/* Responsive Flex Utilities */
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+
+@media (max-width: 640px) {
+    .sm\:flex-col { flex-direction: column; }
+    .sm\:items-start { align-items: flex-start; }
+    .sm\:gap-2 { gap: 0.5rem; }
+}
+
+/* Responsive Spacing */
+.p-0 { padding: 0; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+.p-5 { padding: 1.25rem; }
+.p-6 { padding: 1.5rem; }
+
+.m-0 { margin: 0; }
+.m-auto { margin: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+@media (max-width: 640px) {
+    .sm\:p-2 { padding: 0.5rem; }
+    .sm\:p-3 { padding: 0.75rem; }
+    .sm\:p-4 { padding: 1rem; }
+}
+
+/* Responsive Typography */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+
+@media (max-width: 640px) {
+    .sm\:text-sm { font-size: 0.875rem; }
+    .sm\:text-base { font-size: 1rem; }
+    .sm\:text-lg { font-size: 1.125rem; }
+    .sm\:text-xl { font-size: 1.25rem; }
+    
+    /* Auto-scale large headings on mobile */
+    h1, .text-3xl, .text-2xl {
+        font-size: clamp(1.25rem, 5vw, 1.875rem);
+    }
+}
+
+/* Responsive Display Utilities */
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+@media (max-width: 768px) {
+    .md\:hidden { display: none !important; }
+    .md\:block { display: block !important; }
+}
+
+@media (max-width: 640px) {
+    .sm\:hidden { display: none !important; }
+    .sm\:block { display: block !important; }
+}
+
+@media (min-width: 769px) {
+    .desktop\:hidden { display: none !important; }
+}
+
+/* Responsive Table */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .table-responsive table {
+        min-width: 600px;
+    }
+}
+
+/* Responsive Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Responsive Modal */
+.modal-content {
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        margin: 1rem;
+        border-radius: 12px;
+    }
+}
+
+/* Responsive Form Elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .btn-full-mobile {
+        width: 100%;
+    }
+}
+
+/* Responsive Navigation Adjustments */
+@media (max-width: 900px) {
+    .navbar-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(26, 26, 46, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Responsive Dashboard */
+@media (max-width: 1024px) {
+    .dashboard-main-container {
+        padding: 1rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-main-container {
+        padding: 0.75rem;
+        margin-top: 60px;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Responsive Course Cards */
+@media (max-width: 768px) {
+    .course-card {
+        flex-direction: column;
+    }
+    
+    .course-thumbnail {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+/* Touch-friendly Interactions */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn, button, a.nav-menu-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects that don't work on touch */
+    .course-card:hover,
+    .dashboard-card:hover {
+        transform: none;
+    }
+}
+
+/* Safe Area for Mobile Devices */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .footer {
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

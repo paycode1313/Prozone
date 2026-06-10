@@ -1,0 +1,78 @@
+/* ============================================
+   PROZONE DARK THEME
+   File: assets/css/themes/dark.css
+   Deskripsi: Dark theme overrides
+   Catatan: Token utama sudah didefinisikan di tokens.css
+   File ini berisi override & enhancement khusus dark mode
+   ============================================ */
+
+/* === Aktifkan dark mode dengan: === */
+/* - <html class="dark-mode"> */
+/* - ATAU <body class="dark-mode"> */
+
+body.dark-mode,
+:root.dark-mode {
+  /* Image handling */
+  --shadow-image: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  /* Glass effect untuk dark mode */
+  --glass-bg:     rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur:   blur(12px);
+
+  /* Subtle gradient untuk hero (lebih dramatic) */
+  --hero-gradient: linear-gradient(135deg,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(16, 185, 129, 0.10) 50%,
+    rgba(15, 23, 42, 0) 100%);
+
+  /* Card subtle gradient */
+  --card-gradient: linear-gradient(180deg,
+    rgba(30, 41, 59, 0.6) 0%,
+    rgba(15, 23, 42, 0.8) 100%);
+
+  /* Hover state untuk interactive elements */
+  --hover-overlay: rgba(99, 102, 241, 0.08);
+  --active-overlay: rgba(99, 102, 241, 0.16);
+
+  /* Brand color sedikit lebih cerah di dark mode */
+  --brand:        #818CF8;
+  --brand-hover:  #A5B4FC;
+  --brand-text:   #A5B4FC;
+}
+
+/* === Dark mode color scheme hint untuk native UI === */
+body.dark-mode,
+:root.dark-mode {
+  color-scheme: dark;
+}
+
+/* === Dark mode image adjustments === */
+body.dark-mode img,
+:root.dark-mode img {
+  /* Sedikit kurangi kecerahan gambar untuk konsistensi */
+  /* Opsional: filter: brightness(0.95); */
+}
+
+/* === Dark mode form elements === */
+body.dark-mode input:-webkit-autofill,
+body.dark-mode textarea:-webkit-autofill,
+body.dark-mode select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-input) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+/* === Dark mode code blocks === */
+body.dark-mode pre,
+:root.dark-mode pre {
+  background-color: #0B1220;
+  color: #E2E8F0;
+}
+
+/* === Dark mode scrollbar (sudah di-handle di base.css) === */
+
+/* === Dark mode focus ring lebih kontras === */
+body.dark-mode :focus-visible,
+:root.dark-mode :focus-visible {
+  outline-color: var(--color-primary-400);
+}

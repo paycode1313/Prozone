@@ -1,0 +1,112 @@
+# =====================================================
+# Prozone Web - Git Ignore
+# =====================================================
+
+# -----------------------------------------
+# Sensitive / Credentials
+# -----------------------------------------
+# Real config with credentials (use *.example.php as template)
+config/database.php
+config/config.php
+config/database_hosting.php
+config/*.local.php
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# -----------------------------------------
+# PHP / Composer
+# -----------------------------------------
+vendor/
+composer.phar
+
+# -----------------------------------------
+# Logs
+# -----------------------------------------
+logs/*
+!logs/.gitkeep
+
+# -----------------------------------------
+# IDE / Editor
+# -----------------------------------------
+.claude/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+
+# -----------------------------------------
+# OS / Cache
+# -----------------------------------------
+*.bak
+*.tmp
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+
+# -----------------------------------------
+# Laragon / Local stack
+# -----------------------------------------
+hosting/
+
+# -----------------------------------------
+# Debug / Test (dev only)
+# -----------------------------------------
+debug_*.php
+test-*.php
+*_test.php
+*.bak
+_ide_helper.php
+.phpstorm.meta.php
+.phpunit.result.cache
+
+# -----------------------------------------
+# Uploads (user-generated)
+# -----------------------------------------
+uploads/*
+!uploads/.gitkeep
+assets/uploads/*
+!assets/uploads/.gitkeep
+
+# -----------------------------------------
+# Local test data
+# -----------------------------------------
+api/data.txt
+
+# -----------------------------------------
+# Database dumps (real data, not schema)
+# -----------------------------------------
+*.sql.bak
+*.sql.gz
+*.sql.zip
+dump_*.sql
+backup_*.sql
+prozone_*.sql
+!database/prozone_complete.sql
+
+# -----------------------------------------
+# Build artifacts
+# -----------------------------------------
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# -----------------------------------------
+# Misc
+# -----------------------------------------
+*.iml
+*.orig
+package-lock.json
+yarn.lock

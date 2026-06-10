@@ -1,0 +1,113 @@
+/* ============================================
+   PROZONE - ABOUT PAGE
+   Halaman tentang kami — uses design tokens
+   Uses landing.css components: hero, landing-nav,
+   landing-footer, feature-card, stat-block,
+   how-step, cta-card, reveal animations
+   ============================================ */
+
+.page-about {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Landing-page overrides — use hero from landing.css */
+.page-about .hero {
+    padding-top: calc(var(--space-20) + var(--space-6));
+}
+
+/* === Section spacing === */
+.page-about .section {
+    padding: var(--space-16) 0;
+}
+
+/* === Mission & Vision — card specifics === */
+.page-about .mv-card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: 100%;
+}
+
+.mv-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-hover) 100%);
+    color: var(--text-on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.30);
+}
+
+.mv-icon-accent {
+    background: linear-gradient(135deg, var(--accent) 0%, #059669 100%);
+    color: var(--text-on-primary);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.30);
+}
+
+.mv-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.mv-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.mv-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-3) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.mv-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.mv-check {
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-full);
+    background-color: var(--brand-subtle);
+    color: var(--brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.mv-check-accent {
+    background-color: var(--accent-subtle);
+    color: var(--accent);
+}
+
+/* === Stats — uses stat-block from landing.css === */
+.page-about .section-stats {
+    position: relative;
+    overflow: hidden;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .page-about .section {
+        padding: var(--space-10) 0;
+    }
+}

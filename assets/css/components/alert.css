@@ -1,0 +1,331 @@
+/* ============================================
+   PROZONE ALERT & TOAST COMPONENT
+   File: assets/css/components/alert.css
+   Deskripsi: Alert boxes, notification banners, toast messages
+   ============================================ */
+
+/* === Base alert === */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  position: relative;
+  animation: alertIn var(--transition-smooth) forwards;
+}
+@keyframes alertIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.alert-dismissible {
+  padding-right: var(--space-12);
+}
+.alert-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.alert-content {
+  flex: 1;
+  min-width: 0;
+}
+.alert-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-1);
+  color: inherit;
+}
+.alert-message {
+  margin: 0;
+  color: inherit;
+  font-size: var(--text-sm);
+  opacity: 0.9;
+}
+.alert-action {
+  margin-top: var(--space-2);
+  display: flex;
+  gap: var(--space-2);
+}
+.alert-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+.alert-close:hover {
+  opacity: 1;
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* === Variants === */
+.alert-info {
+  background-color: var(--color-info-light);
+  color: var(--color-info-dark);
+  border-color: var(--color-info);
+}
+.alert-success {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  border-color: var(--color-success);
+}
+.alert-warning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+  border-color: var(--color-warning);
+}
+.alert-error,
+.alert-danger {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  border-color: var(--color-error);
+}
+.alert-primary {
+  background-color: var(--brand-subtle);
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* === Outline variant === */
+.alert-outline {
+  background-color: transparent;
+  border-width: 2px;
+}
+.alert-outline.alert-info { color: var(--color-info); }
+.alert-outline.alert-success { color: var(--color-success); }
+.alert-outline.alert-warning { color: var(--color-warning); }
+.alert-outline.alert-error { color: var(--color-error); }
+
+/* === Solid variant === */
+.alert-solid {
+  color: white;
+  border: 0;
+}
+.alert-solid .alert-close { color: white; opacity: 0.8; }
+.alert-solid .alert-close:hover { background-color: rgba(255,255,255,0.2); }
+.alert-solid.alert-info { background-color: var(--color-info); }
+.alert-solid.alert-success { background-color: var(--color-success); }
+.alert-solid.alert-warning { background-color: var(--color-warning); }
+.alert-solid.alert-error { background-color: var(--color-error); }
+.alert-solid.alert-primary { background-color: var(--brand); }
+
+/* === Sizes === */
+.alert-sm { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
+.alert-lg {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-base);
+}
+.alert-lg .alert-icon { width: 24px; height: 24px; }
+
+/* === Banner (full-width top notification) === */
+.alert-banner {
+  width: 100%;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: var(--space-3) var(--space-6);
+}
+
+/* === Toast (popup notification) === */
+.toast-container {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+.toast-container-top-right {
+  top: var(--space-4);
+  right: var(--space-4);
+}
+.toast-container-top-left {
+  top: var(--space-4);
+  left: var(--space-4);
+}
+.toast-container-top-center {
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.toast-container-bottom-right {
+  bottom: var(--space-4);
+  right: var(--space-4);
+}
+.toast-container-bottom-left {
+  bottom: var(--space-4);
+  left: var(--space-4);
+}
+.toast-container-bottom-center {
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 280px;
+  max-width: 400px;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: toastIn var(--transition-spring) forwards;
+}
+.toast.is-leaving {
+  animation: toastOut var(--transition-fast) forwards;
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+.toast-container-top-left .toast,
+.toast-container-bottom-left .toast {
+  animation-name: toastInLeft;
+}
+.toast-container-top-left .toast.is-leaving,
+.toast-container-bottom-left .toast.is-leaving {
+  animation-name: toastOutLeft;
+}
+@keyframes toastInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes toastOutLeft {
+  to { opacity: 0; transform: translateX(-20px); }
+}
+.toast-container-top-center .toast,
+.toast-container-bottom-center .toast {
+  animation-name: toastInUp;
+}
+.toast-container-top-center .toast.is-leaving,
+.toast-container-bottom-center .toast.is-leaving {
+  animation-name: toastOutDown;
+}
+@keyframes toastInUp {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes toastOutDown {
+  to { opacity: 0; transform: translateY(20px); }
+}
+.toast-container-bottom-right .toast,
+.toast-container-bottom-left .toast,
+.toast-container-bottom-center .toast {
+  animation-name: toastInUp;
+}
+
+.toast-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.toast-body {
+  flex: 1;
+  min-width: 0;
+}
+.toast-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  margin: 0 0 2px;
+}
+.toast-message {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+.toast-close {
+  background: transparent;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+.toast-close:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Toast with variants via icon color */
+.toast-success .toast-icon { color: var(--color-success); }
+.toast-warning .toast-icon { color: var(--color-warning); }
+.toast-error .toast-icon { color: var(--color-error); }
+.toast-info .toast-icon { color: var(--color-info); }
+
+/* Toast with progress bar (auto-dismiss) */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  animation: toastProgress linear forwards;
+  transform-origin: left;
+}
+@keyframes toastProgress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* === Inline notification (form errors, etc) === */
+.notification {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+.notification-error { color: var(--color-error); }
+.notification-success { color: var(--color-success); }
+.notification-warning { color: var(--color-warning); }
+.notification-icon { width: 14px; height: 14px; flex-shrink: 0; }

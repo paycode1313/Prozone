@@ -1,0 +1,436 @@
+/* ============================================
+   PROZONE - FEATURES PAGE
+   Specific styles for features.php
+   Shared components come from landing.css
+   ============================================ */
+
+/* === Page-level overrides === */
+.page-features .hero {
+  padding-top: calc(var(--space-20) + var(--space-6));
+}
+
+/* === Feature Detail (split screen) === */
+.section-feature-detail {
+  padding: var(--space-16) 0;
+}
+.feature-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+.section-feature-reverse .feature-detail {
+  direction: rtl;
+}
+.section-feature-reverse .feature-detail > * {
+  direction: ltr;
+}
+.feature-detail-content {
+  max-width: 540px;
+}
+
+/* Detail eyebrow (icon + label) */
+.section-detail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--brand);
+  background-color: var(--brand-subtle);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.section-detail-eyebrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.feature-detail-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: var(--font-bold);
+  margin: var(--space-3) 0 var(--space-4);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.feature-detail-desc {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-5);
+}
+.feature-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.feature-detail-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+.feature-detail-list svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+/* === Code Preview === */
+.code-preview {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+.code-preview:hover {
+  border-color: var(--brand);
+  box-shadow: 0 12px 32px -8px rgba(99, 102, 241, 0.15);
+}
+.code-preview-header {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border-default);
+  gap: var(--space-3);
+}
+.code-preview-dots {
+  display: flex;
+  gap: 6px;
+}
+.code-preview-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--border-default);
+}
+.code-preview-dots span:nth-child(1) { background-color: #F43F5E; }
+.code-preview-dots span:nth-child(2) { background-color: #F59E0B; }
+.code-preview-dots span:nth-child(3) { background-color: #10B981; }
+.code-preview-filename {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.code-preview-body {
+  padding: var(--space-4) var(--space-5);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+.code-preview-body pre {
+  margin: 0;
+  white-space: pre;
+  background: transparent;
+  color: var(--text-primary);
+}
+.code-line {
+  display: block;
+  padding: 0;
+}
+.code-keyword { color: #c084fc; }
+.code-function { color: #60a5fa; }
+.code-string { color: #34d399; }
+.code-var { color: var(--text-primary); }
+.code-interp { color: #fbbf24; }
+.code-preview-output {
+  border-top: 1px solid var(--border-default);
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--bg-muted);
+}
+.code-output-label {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.code-output-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+}
+
+/* === Gamification Preview === */
+.gamification-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.xp-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+.xp-card:hover {
+  border-color: var(--brand);
+  box-shadow: 0 12px 32px -8px rgba(99, 102, 241, 0.15);
+}
+.xp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.xp-card-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+}
+.xp-card-icon {
+  color: var(--accent);
+}
+.xp-card-value {
+  font-size: 2rem;
+  font-weight: var(--font-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+.xp-progress {
+  height: 8px;
+  background: var(--bg-muted);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+}
+.xp-progress-bar {
+  height: 100%;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+}
+.xp-progress-label {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+.achievement-strip {
+  display: flex;
+  gap: var(--space-3);
+}
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  flex: 1;
+  text-align: center;
+  transition: all var(--transition-smooth);
+}
+.achievement-item:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+.achievement-item-icon {
+  color: var(--accent);
+}
+.achievement-item-name {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+.achievement-item-locked .achievement-item-icon {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+
+/* === Clan Preview === */
+.clan-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.clan-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+.clan-card:hover {
+  border-color: var(--brand);
+  box-shadow: 0 12px 32px -8px rgba(99, 102, 241, 0.15);
+}
+.clan-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.clan-card-emblem {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-hover) 100%);
+  color: var(--text-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.30);
+}
+.clan-card-emblem svg {
+  width: 24px;
+  height: 24px;
+}
+.clan-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.clan-card-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+.clan-card-rank {
+  font-size: var(--text-sm);
+  color: var(--brand);
+  font-weight: var(--font-semibold);
+}
+/* Stats */
+.clan-card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.clan-stat {
+  text-align: center;
+  padding: var(--space-3);
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+}
+.clan-stat-value {
+  font-size: var(--text-xl);
+  font-weight: var(--font-extrabold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+.clan-stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+/* Member avatars */
+.clan-members-strip {
+  display: flex;
+  gap: var(--space-2);
+}
+.clan-member-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--avatar-color) 0%, color-mix(in srgb, var(--avatar-color) 70%, var(--bg-elevated)) 100%);
+  color: var(--text-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--avatar-color) 30%, transparent);
+  transition: transform var(--transition-smooth);
+}
+.clan-member-avatar:hover {
+  transform: scale(1.15);
+}
+.clan-member-more {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  box-shadow: none;
+}
+/* Leaderboard mini */
+.clan-leaderboard-mini {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+.clan-leaderboard-mini:hover {
+  border-color: var(--brand);
+  box-shadow: 0 12px 32px -8px rgba(99, 102, 241, 0.15);
+}
+.clan-lb-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  transition: background-color var(--transition-fast);
+}
+.clan-lb-row-top {
+  color: var(--text-secondary);
+}
+.clan-lb-row-top:hover {
+  background-color: var(--bg-hover);
+}
+.clan-lb-row-you {
+  background: var(--brand-subtle);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: var(--brand-text);
+  font-weight: var(--font-semibold);
+}
+.clan-lb-rank {
+  font-weight: var(--font-bold);
+  min-width: 28px;
+}
+.clan-lb-name {
+  flex: 1;
+}
+.clan-lb-xp {
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+}
+.clan-lb-row-you .clan-lb-xp {
+  color: var(--brand);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .feature-detail {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .section-feature-reverse .feature-detail {
+    direction: ltr;
+  }
+  .feature-detail-content {
+    order: 1;
+    max-width: none;
+  }
+  .feature-detail-visual {
+    order: 0;
+  }
+  .achievement-strip {
+    flex-wrap: wrap;
+  }
+  .achievement-item {
+    flex: 0 0 calc(50% - var(--space-1.5));
+  }
+  .clan-card-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

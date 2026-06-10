@@ -1,0 +1,54 @@
+/* ============================================
+   PROZONE LIGHT THEME
+   File: assets/css/themes/light.css
+   Deskripsi: Light theme overrides (default theme)
+   Catatan: Token utama sudah didefinisikan di tokens.css
+   File ini berisi override & enhancement khusus light mode
+   ============================================ */
+
+/* === Light theme is the default. Aktifkan dengan: === */
+/* - Tidak ada class di <html>/<body> (default) */
+/* - ATAU tambahkan class="light-mode" */
+
+/* === Subtle enhancements untuk light mode === */
+body,
+body.light-mode {
+  /* Image handling - sedikit lebih gelap untuk kontras di light bg */
+  --shadow-image: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  /* Glass effect untuk light mode */
+  --glass-bg:    rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-blur:  blur(12px);
+
+  /* Subtle gradient untuk hero */
+  --hero-gradient: linear-gradient(135deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(16, 185, 129, 0.06) 50%,
+    rgba(255, 255, 255, 0) 100%);
+
+  /* Card subtle gradient */
+  --card-gradient: linear-gradient(180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(248, 250, 252, 1) 100%);
+
+  /* Hover state untuk interactive elements */
+  --hover-overlay: rgba(99, 102, 241, 0.04);
+  --active-overlay: rgba(99, 102, 241, 0.08);
+}
+
+/* === Light mode typography enhancements === */
+body,
+body.light-mode {
+  /* Slightly increase font weight untuk readability di light bg */
+  --font-base-weight: var(--font-normal);
+}
+
+/* === Print styles (light only) === */
+@media print {
+  body,
+  body.light-mode {
+    background: #fff;
+    color: #000;
+  }
+}

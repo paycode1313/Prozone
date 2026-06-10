@@ -1,0 +1,395 @@
+/* ============================================
+   TOOLTIP & POPOVER COMPONENT
+   File: assets/css/components/tooltip.css
+   Dependencies: tokens.css, base.css
+   ============================================ */
+
+/* === TOOLTIP WRAPPER === */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* === TOOLTIP === */
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  max-width: 240px;
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .tooltip {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.tooltip-wrapper:hover .tooltip,
+.tooltip-wrapper:focus-within .tooltip,
+.tooltip.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === TOOLTIP ARROW === */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+
+/* === POSITION: TOP (default) === */
+.tooltip[data-position="top"],
+.tooltip-top {
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+}
+
+.tooltip-wrapper:hover .tooltip[data-position="top"],
+.tooltip-wrapper:focus-within .tooltip[data-position="top"],
+.tooltip-top.is-visible {
+  transform: translateX(-50%) scale(1);
+}
+
+.tooltip[data-position="top"]::after,
+.tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .tooltip[data-position="top"]::after,
+[data-theme="dark"] .tooltip-top::after {
+  border-top-color: var(--color-gray-100);
+}
+
+/* === POSITION: BOTTOM === */
+.tooltip[data-position="bottom"],
+.tooltip-bottom {
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+}
+
+.tooltip-wrapper:hover .tooltip[data-position="bottom"],
+.tooltip-wrapper:focus-within .tooltip[data-position="bottom"],
+.tooltip-bottom.is-visible {
+  transform: translateX(-50%) scale(1);
+}
+
+.tooltip[data-position="bottom"]::after,
+.tooltip-bottom::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .tooltip[data-position="bottom"]::after,
+[data-theme="dark"] .tooltip-bottom::after {
+  border-bottom-color: var(--color-gray-100);
+}
+
+/* === POSITION: LEFT === */
+.tooltip[data-position="left"],
+.tooltip-left {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.tooltip-wrapper:hover .tooltip[data-position="left"],
+.tooltip-wrapper:focus-within .tooltip[data-position="left"],
+.tooltip-left.is-visible {
+  transform: translateY(-50%) scale(1);
+}
+
+.tooltip[data-position="left"]::after,
+.tooltip-left::after {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .tooltip[data-position="left"]::after,
+[data-theme="dark"] .tooltip-left::after {
+  border-left-color: var(--color-gray-100);
+}
+
+/* === POSITION: RIGHT === */
+.tooltip[data-position="right"],
+.tooltip-right {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.tooltip-wrapper:hover .tooltip[data-position="right"],
+.tooltip-wrapper:focus-within .tooltip[data-position="right"],
+.tooltip-right.is-visible {
+  transform: translateY(-50%) scale(1);
+}
+
+.tooltip[data-position="right"]::after,
+.tooltip-right::after {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .tooltip[data-position="right"]::after,
+[data-theme="dark"] .tooltip-right::after {
+  border-right-color: var(--color-gray-100);
+}
+
+/* === COLOR VARIANTS === */
+.tooltip-primary {
+  background: var(--color-primary-600);
+  color: var(--color-white);
+}
+
+.tooltip-primary::after {
+  border-top-color: var(--color-primary-600);
+  border-bottom-color: var(--color-primary-600);
+  border-left-color: var(--color-primary-600);
+  border-right-color: var(--color-primary-600);
+}
+
+.tooltip-success {
+  background: var(--color-success);
+  color: var(--color-white);
+}
+
+.tooltip-success::after {
+  border-top-color: var(--color-success);
+  border-bottom-color: var(--color-success);
+  border-left-color: var(--color-success);
+  border-right-color: var(--color-success);
+}
+
+.tooltip-warning {
+  background: var(--color-warning);
+  color: var(--color-white);
+}
+
+.tooltip-warning::after {
+  border-top-color: var(--color-warning);
+  border-bottom-color: var(--color-warning);
+  border-left-color: var(--color-warning);
+  border-right-color: var(--color-warning);
+}
+
+.tooltip-error {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.tooltip-error::after {
+  border-top-color: var(--color-error);
+  border-bottom-color: var(--color-error);
+  border-left-color: var(--color-error);
+  border-right-color: var(--color-error);
+}
+
+/* === LIGHT VARIANT === */
+.tooltip-light {
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  border: 1px solid var(--color-gray-200);
+}
+
+[data-theme="dark"] .tooltip-light {
+  background: var(--color-gray-800);
+  color: var(--color-gray-100);
+  border-color: var(--color-gray-700);
+}
+
+.tooltip-light::after {
+  border-top-color: var(--color-white);
+  border-bottom-color: var(--color-white);
+  border-left-color: var(--color-white);
+  border-right-color: var(--color-white);
+}
+
+[data-theme="dark"] .tooltip-light::after {
+  border-top-color: var(--color-gray-800);
+  border-bottom-color: var(--color-gray-800);
+  border-left-color: var(--color-gray-800);
+  border-right-color: var(--color-gray-800);
+}
+
+/* === SIZES === */
+.tooltip-sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.6875rem;
+}
+
+.tooltip-lg {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+/* === ALLOW WRAP === */
+.tooltip-wrap {
+  white-space: normal;
+  text-align: center;
+  max-width: 280px;
+}
+
+/* === POPOVER === */
+.popover {
+  position: absolute;
+  z-index: 999;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  min-width: 280px;
+  max-width: 360px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .popover {
+  background: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+.popover-wrapper:hover .popover,
+.popover-wrapper:focus-within .popover,
+.popover.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* === POPOVER HEADER === */
+.popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+  gap: var(--space-3);
+}
+
+[data-theme="dark"] .popover-header {
+  border-bottom-color: var(--color-gray-700);
+}
+
+.popover-title {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  flex: 1;
+  min-width: 0;
+}
+
+[data-theme="dark"] .popover-title {
+  color: var(--color-gray-50);
+}
+
+.popover-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.popover-close:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .popover-close:hover {
+  background: var(--color-gray-700);
+  color: var(--color-gray-50);
+}
+
+/* === POPOVER BODY === */
+.popover-body {
+  padding: var(--space-4);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+[data-theme="dark"] .popover-body {
+  color: var(--color-gray-300);
+}
+
+/* === POPOVER FOOTER === */
+.popover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+  background: var(--color-gray-50);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+[data-theme="dark"] .popover-footer {
+  border-top-color: var(--color-gray-700);
+  background: var(--color-gray-900);
+}
+
+/* === POPOVER ARROW === */
+.popover-arrow {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  transform: rotate(45deg);
+}
+
+[data-theme="dark"] .popover-arrow {
+  background: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+.popover-arrow-top { top: -7px; left: 50%; margin-left: -8px; border-right: none; border-bottom: none; }
+.popover-arrow-bottom { bottom: -7px; left: 50%; margin-left: -8px; border-left: none; border-top: none; }
+.popover-arrow-left { left: -7px; top: 50%; margin-top: -8px; border-right: none; border-top: none; }
+.popover-arrow-right { right: -7px; top: 50%; margin-top: -8px; border-left: none; border-bottom: none; }
+
+/* === POPOVER POSITIONS === */
+.popover-top { bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) scale(0.95); }
+.popover-top.is-visible { transform: translateX(-50%) scale(1); }
+.popover-bottom { top: calc(100% + 12px); left: 50%; transform: translateX(-50%) scale(0.95); }
+.popover-bottom.is-visible { transform: translateX(-50%) scale(1); }
+.popover-left { right: calc(100% + 12px); top: 50%; transform: translateY(-50%) scale(0.95); }
+.popover-left.is-visible { transform: translateY(-50%) scale(1); }
+.popover-right { left: calc(100% + 12px); top: 50%; transform: translateY(-50%) scale(0.95); }
+.popover-right.is-visible { transform: translateY(-50%) scale(1); }

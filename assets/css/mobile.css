@@ -1,0 +1,989 @@
+/* ============================================
+   PROZONE MOBILE-FIRST RESPONSIVE CSS
+   Premium Clean & Modern Design
+   ============================================ */
+
+/* ============================================
+   GLOBAL MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+    /* Prevent zoom on input focus iOS */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+    
+    /* Smoother scrolling */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Better base font for mobile */
+    body {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    /* Better main container */
+    .dashboard-main-container {
+        padding: 1rem;
+        margin-top: 56px;
+    }
+    
+    /* Content area */
+    .dashboard-content {
+        padding: 0;
+    }
+    
+    .content {
+        padding: 0;
+    }
+}
+
+/* ============================================
+   CLEAN NAVBAR MOBILE
+   ============================================ */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-brand img {
+        height: 28px;
+    }
+    
+    /* Hide desktop elements */
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+@media (min-width: 901px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   DASHBOARD MOBILE - PREMIUM CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    /* Dashboard Header */
+    .dashboard-header {
+        padding: 1.5rem;
+        margin-bottom: 1.25rem;
+        border-radius: 16px;
+        background: linear-gradient(135deg, 
+            rgba(109, 40, 217, 0.12) 0%, 
+            rgba(139, 92, 246, 0.08) 50%,
+            rgba(167, 139, 250, 0.04) 100%);
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.35rem;
+        margin-bottom: 0.375rem;
+        background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .dashboard-header p {
+        font-size: 0.875rem;
+        color: #94a3b8;
+        line-height: 1.5;
+    }
+    
+    /* Stats Grid - 2 columns */
+    .dashboard-grid,
+    .stats-grid,
+    .widget-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.875rem;
+    }
+    
+    /* Stat Cards */
+    .dashboard-card,
+    .stat-card {
+        padding: 1.25rem;
+        border-radius: 14px;
+        background: linear-gradient(145deg, 
+            rgba(30, 30, 55, 0.95) 0%, 
+            rgba(35, 35, 65, 0.9) 100%);
+    }
+    
+    .card-value,
+    .stat-card .stat-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+    
+    .card-title,
+    .stat-card .stat-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-subtitle {
+        font-size: 0.75rem;
+        color: #64748b;
+    }
+    
+    /* Widget grids - single column */
+    .widget-grid-2-1,
+    .widget-grid-1-2 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    
+    /* Widget cards */
+    .widget-card {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .widget-card h3,
+    .widget-header h4 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .stats-grid,
+    .widget-grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stat-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* ============================================
+   COURSE LISTING MOBILE - PREMIUM
+   ============================================ */
+@media (max-width: 768px) {
+    .courses-header {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        border-radius: 14px;
+    }
+    
+    .courses-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+    
+    .course-card {
+        border-radius: 18px;
+        overflow: hidden;
+        background: linear-gradient(145deg, 
+            rgba(30, 30, 55, 0.98) 0%, 
+            rgba(35, 35, 65, 0.95) 100%);
+    }
+    
+    .course-cover-image {
+        height: 200px !important;
+    }
+    
+    .course-card-thumbnail,
+    .course-thumbnail {
+        width: 72px !important;
+        height: 72px !important;
+        margin-top: -36px;
+        border-width: 3px;
+    }
+    
+    .course-card-content,
+    .course-content {
+        padding: 1.25rem !important;
+    }
+    
+    .course-card-title,
+    .course-title {
+        font-size: 1.15rem !important;
+        line-height: 1.4;
+        margin-bottom: 0.625rem;
+    }
+    
+    .course-card-description,
+    .course-description {
+        font-size: 0.9rem !important;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        margin-bottom: 1rem;
+    }
+    
+    .course-card-meta,
+    .course-meta {
+        font-size: 0.85rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .course-level {
+        font-size: 0.75rem !important;
+        padding: 0.25rem 0.625rem !important;
+    }
+    
+    .course-footer {
+        padding-top: 1rem;
+    }
+    
+    .btn-enroll,
+    .btn-continue {
+        padding: 0.625rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        border-radius: 10px;
+    }
+    
+    .progress-container {
+        height: 6px !important;
+        margin-bottom: 1rem;
+    }
+    
+    /* Course filters mobile */
+    .course-filters,
+    form[method="GET"] {
+        flex-direction: column !important;
+        gap: 0.75rem;
+    }
+    
+    .course-filters select,
+    .course-filters input,
+    form[method="GET"] input,
+    form[method="GET"] select {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+}
+
+/* ============================================
+   LESSON PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 900px) {
+    .lesson-container {
+        flex-direction: column;
+    }
+    
+    .lesson-sidebar {
+        width: 100%;
+        max-height: 180px;
+        overflow-y: auto;
+        order: 2;
+        border-radius: 10px;
+    }
+    
+    .lesson-content {
+        width: 100%;
+        order: 1;
+    }
+    
+    .lesson-header {
+        padding: 0.875rem;
+    }
+    
+    .lesson-header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .lesson-navigation {
+        gap: 0.5rem;
+    }
+    
+    .lesson-navigation .nav-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Code editor mobile - clean */
+    .lesson-wrapper {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .editor-container,
+    .preview-container {
+        width: 100%;
+        min-height: 280px;
+        border-radius: 10px;
+    }
+    
+    .editor-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0.25rem;
+        padding: 0.5rem;
+    }
+    
+    .editor-tab {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    .CodeMirror {
+        font-size: 12px !important;
+    }
+    
+    /* Slide content - clean */
+    .slide-container {
+        padding: 0.875rem;
+    }
+    
+    .slide-content {
+        font-size: 0.9rem;
+    }
+    
+    .slide-content h1 {
+        font-size: 1.35rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.15rem;
+    }
+    
+    .slide-content pre {
+        font-size: 0.75rem;
+        padding: 0.625rem;
+        border-radius: 8px;
+    }
+    
+    /* Discussion FAB - smaller */
+    .discussion-drawer {
+        width: 100% !important;
+    }
+    
+    .discussion-fab {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+    }
+}
+
+/* ============================================
+   LOGIN/REGISTER MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 640px) {
+    .login-page {
+        padding: 0.75rem;
+    }
+    
+    .login-container {
+        padding: 0;
+    }
+    
+    .login-box {
+        padding: 1.25rem;
+        border-radius: 12px;
+        margin: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .login-header h1 {
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .login-form .form-group {
+        margin-bottom: 0.875rem;
+    }
+    
+    .login-form input {
+        padding: 0.75rem 0.875rem;
+        font-size: 16px; /* Prevent zoom */
+        border-radius: 8px;
+    }
+    
+    .login-form .btn {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    .social-login {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .social-login button {
+        width: 100%;
+        padding: 0.625rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   PROFILE PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .profile-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.25rem;
+    }
+    
+    .profile-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .profile-tab {
+        white-space: nowrap;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+}
+
+/* ============================================
+   ACHIEVEMENTS PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.625rem;
+    }
+    
+    .achievement-card {
+        padding: 0.875rem;
+        border-radius: 10px;
+    }
+    
+    .achievement-icon {
+        font-size: 1.75rem;
+    }
+    
+    .achievement-name {
+        font-size: 0.85rem;
+    }
+    
+    .achievement-description {
+        font-size: 0.7rem;
+        margin-top: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================
+   CERTIFICATES PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
+    }
+    
+    .certificate-card {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .certificate-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .certificate-actions button {
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   LEADERBOARD MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .leaderboard-table {
+        font-size: 0.8rem;
+    }
+    
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 0.625rem 0.375rem;
+    }
+    
+    .leaderboard-table .hide-mobile {
+        display: none;
+    }
+    
+    .leaderboard-user {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.125rem;
+    }
+    
+    .leaderboard-avatar {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ============================================
+   SHOP PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .shop-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .coin-balance {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.875rem;
+    }
+    
+    .shop-item {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+    
+    .item-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+    
+    .item-name {
+        font-size: 0.95rem;
+    }
+    
+    .item-desc {
+        font-size: 0.8rem;
+    }
+    
+    .item-cost {
+        font-size: 0.95rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .btn-buy,
+    .btn-equip {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .shop-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+    
+    .item-icon {
+        margin-bottom: 0;
+    }
+    
+    .shop-item > div {
+        flex: 1;
+    }
+}
+
+/* ============================================
+   CLAN PAGE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 900px) {
+    .clan-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+        padding: 1rem;
+    }
+    
+    .clan-header {
+        padding: 1.25rem;
+    }
+    
+    .clan-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .clan-info {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .chat-container {
+        height: 400px;
+    }
+    
+    .chat-message {
+        padding: 0.625rem;
+    }
+    
+    .chat-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+    
+    .chat-username {
+        font-size: 0.8rem;
+    }
+    
+    .chat-text {
+        font-size: 0.85rem;
+    }
+    
+    .clan-sidebar {
+        order: -1;
+    }
+    
+    .members-card,
+    .clans-list {
+        padding: 1.25rem;
+    }
+    
+    .member-item {
+        padding: 0.625rem;
+    }
+    
+    .member-avatar {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .clan-item {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        height: 350px;
+    }
+    
+    .chat-input-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-send {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   MODALS MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 640px) {
+    .modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+    
+    .modal-content,
+    .share-modal-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 14px 14px 0 0;
+        margin: 0;
+        padding: 1rem;
+    }
+    
+    .modal-header {
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .modal-header h3 {
+        font-size: 1rem;
+    }
+    
+    .share-options {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.375rem;
+    }
+    
+    .share-option {
+        padding: 0.625rem;
+        border-radius: 8px;
+    }
+    
+    .share-option svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .share-option span {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================
+   FORMS MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 640px) {
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.375rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem 0.875rem;
+        font-size: 16px; /* Prevent iOS zoom */
+        border-radius: 8px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
+        padding: 0.625rem;
+    }
+}
+
+/* ============================================
+   ALERTS & NOTIFICATIONS MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 640px) {
+    .alert {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+    
+    .notification-dropdown {
+        width: calc(100vw - 1rem);
+        right: -0.5rem;
+        max-height: 65vh;
+        border-radius: 10px;
+    }
+    
+    .notification-item {
+        padding: 0.75rem;
+    }
+    
+    .notification-item .title {
+        font-size: 0.85rem;
+    }
+    
+    .notification-item .message {
+        font-size: 0.75rem;
+    }
+    
+    .toast {
+        left: 0.75rem;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        max-width: none;
+        border-radius: 8px;
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   FOOTER MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0.875rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   UTILITIES MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 640px) {
+    /* Hide on mobile */
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    /* Show only on mobile */
+    .show-mobile {
+        display: block !important;
+    }
+    
+    /* Full width on mobile */
+    .w-full-mobile {
+        width: 100% !important;
+    }
+    
+    /* Stack on mobile */
+    .stack-mobile {
+        flex-direction: column !important;
+    }
+    
+    /* Center on mobile */
+    .center-mobile {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Smaller text on mobile */
+    .text-sm-mobile {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Reduced padding on mobile */
+    .p-sm-mobile {
+        padding: 0.625rem !important;
+    }
+}
+
+/* ============================================
+   TOUCH IMPROVEMENTS - CLEAN
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch-friendly targets */
+    button, 
+    .btn, 
+    a.btn,
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-height: 40px;
+    }
+    
+    /* Remove hover effects for touch */
+    .course-card:hover,
+    .achievement-card:hover,
+    .certificate-card:hover,
+    .shop-item:hover {
+        transform: none;
+        box-shadow: inherit;
+    }
+    
+    /* Smooth active state */
+    .course-card:active,
+    .btn:active,
+    .shop-item:active {
+        transform: scale(0.97);
+        opacity: 0.85;
+        transition: all 0.1s ease;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE - CLEAN
+   ============================================ */
+@media (max-width: 900px) and (orientation: landscape) {
+    .navbar {
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .dashboard-main-container {
+        margin-top: 45px;
+    }
+    
+    .login-box {
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    
+    .modal-content {
+        max-height: 75vh;
+    }
+}
+
+/* ============================================
+   PRINT STYLES (for certificates)
+   ============================================ */
+@media print {
+    .navbar,
+    .footer,
+    .discussion-fab,
+    .btn-download,
+    .btn-share,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .certificate-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    body {
+        background: white !important;
+    }
+}

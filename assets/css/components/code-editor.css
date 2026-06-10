@@ -1,0 +1,365 @@
+/* ============================================
+   PROZONE CODE EDITOR COMPONENT
+   File: assets/css/components/code-editor.css
+   Deskripsi: Monaco-like code editor, line numbers, toolbar, run button
+   ============================================ */
+
+/* === Code editor wrapper === */
+.code-editor {
+  --editor-bg: var(--surface-card);
+  --editor-border: var(--border-color);
+  --editor-header-bg: var(--surface-tertiary);
+  --editor-text: var(--text-primary);
+  --editor-comment: var(--text-tertiary);
+  --editor-keyword: #569cd6;
+  --editor-string: #ce9178;
+  --editor-function: #dcdcaa;
+  --editor-number: #b5cea8;
+  --editor-operator: #d4d4d4;
+  --editor-gutter: var(--surface-secondary);
+  --editor-gutter-text: var(--text-tertiary);
+  --editor-selection: rgba(38, 79, 120, 0.3);
+  --editor-line-highlight: rgba(255, 255, 255, 0.05);
+  --editor-scrollbar: var(--border-color);
+  --editor-scrollbar-thumb: var(--text-muted);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  border-radius: var(--radius-lg);
+  background-color: var(--editor-bg);
+  border: 1px solid var(--editor-border);
+  overflow: hidden;
+}
+
+.code-editor:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+/* === Editor toolbar === */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--editor-header-bg);
+  border-bottom: 1px solid var(--editor-border);
+}
+
+.editor-toolbar-left,
+.editor-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.editor-language-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-full);
+}
+
+.editor-language-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* === Run button === */
+.editor-run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-on-primary);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.editor-run-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.editor-run-btn:active {
+  transform: translateY(0);
+}
+
+.editor-run-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* === Editor content area === */
+.editor-content {
+  position: relative;
+  display: flex;
+  min-height: 200px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.editor-line-numbers {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--space-3) var(--space-2);
+  background-color: var(--editor-gutter);
+  border-right: 1px solid var(--editor-border);
+  overflow-y: hidden;
+  user-select: none;
+}
+
+.editor-line-number {
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  color: var(--editor-gutter-text);
+  text-align: right;
+  line-height: 1.6;
+  min-width: 30px;
+}
+
+.editor-code {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--space-3);
+  overflow-y: auto;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--editor-text);
+  white-space: pre;
+  outline: none;
+}
+
+.editor-code textarea {
+  flex: 1;
+  min-height: 100%;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--editor-text);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+/* === Syntax highlighting === */
+.editor-code .keyword {
+  color: var(--editor-keyword);
+  font-weight: var(--font-medium);
+}
+
+.editor-code .string {
+  color: var(--editor-string);
+}
+
+.editor-code .function {
+  color: var(--editor-function);
+}
+
+.editor-code .number {
+  color: var(--editor-number);
+}
+
+.editor-code .comment {
+  color: var(--editor-comment);
+  font-style: italic;
+}
+
+.editor-code .operator {
+  color: var(--editor-operator);
+}
+
+/* === Editor footer === */
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--editor-header-bg);
+  border-top: 1px solid var(--editor-border);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.editor-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.editor-status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.editor-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.editor-action-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-hover);
+}
+
+.editor-action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* === Output panel === */
+.editor-output {
+  margin-top: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--surface-tertiary);
+  border: 1px solid var(--editor-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: auto;
+}
+
+.editor-output.success {
+  border-color: var(--color-success);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.editor-output.error {
+  border-color: var(--color-error);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.editor-output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--editor-border);
+}
+
+.editor-output-title {
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.editor-output-content {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* === Editor variants === */
+.code-editor.compact .editor-content {
+  min-height: 120px;
+  max-height: 300px;
+}
+
+.code-editor.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  border-radius: 0;
+  margin: 0;
+}
+
+.code-editor.dark {
+  --editor-bg: #1e1e1e;
+  --editor-border: #333;
+  --editor-header-bg: #252526;
+  --editor-text: #d4d4d4;
+  --editor-gutter: #1e1e1e;
+  --editor-gutter-text: #858585;
+  --editor-line-highlight: rgba(255, 255, 255, 0.05);
+}
+
+.code-editor.light {
+  --editor-bg: #ffffff;
+  --editor-border: #e0e0e0;
+  --editor-header-bg: #f5f5f5;
+  --editor-text: #333333;
+  --editor-gutter: #f5f5f5;
+  --editor-gutter-text: #999999;
+  --editor-line-highlight: rgba(0, 0, 0, 0.03);
+}
+
+/* === Editor animations === */
+@keyframes pulse-run {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.editor-run-btn.running {
+  animation: pulse-run 1.5s infinite;
+  pointer-events: none;
+}
+
+/* === Scrollbar styling === */
+.editor-code::-webkit-scrollbar,
+.editor-output::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.editor-code::-webkit-scrollbar-track,
+.editor-output::-webkit-scrollbar-track {
+  background-color: var(--editor-scrollbar);
+}
+
+.editor-code::-webkit-scrollbar-thumb,
+.editor-output::-webkit-scrollbar-thumb {
+  background-color: var(--editor-scrollbar-thumb);
+  border-radius: var(--radius-full);
+}
+
+.editor-code::-webkit-scrollbar-thumb:hover,
+.editor-output::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-muted);
+}

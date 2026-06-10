@@ -1,0 +1,762 @@
+/* ========================================
+   GLASSMORPHISM & COMPACT LAYOUT SYSTEM
+   ======================================== */
+
+/* Container Layout */
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-wrapper-sm {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-wrapper-lg {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========================================
+   GLASSMORPHISM PAGE HEADER
+   ======================================== */
+.glass-header {
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.15) 0%, 
+        rgba(109, 40, 217, 0.1) 50%,
+        rgba(167, 139, 250, 0.08) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: var(--text-primary);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 20%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.3) 80%,
+        transparent 100%);
+}
+
+.glass-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.glass-header h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #e0e7ff 50%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.glass-header p {
+    margin: 0;
+    color: rgba(203, 213, 225, 0.9);
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   GLASSMORPHISM CARDS
+   ======================================== */
+.glass-card {
+    background: rgba(30, 30, 55, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.05) 0%, 
+        transparent 50%,
+        rgba(124, 58, 237, 0.03) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 16px 40px rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(139, 92, 246, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.glass-card-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.25rem;
+}
+
+/* Compact Card Variant */
+.glass-card-compact {
+    background: rgba(30, 30, 55, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+}
+
+.glass-card-compact:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* ========================================
+   GLASSMORPHISM SECTION/PANEL
+   ======================================== */
+.glass-section {
+    background: rgba(30, 30, 60, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1.25rem;
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 24px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-section-header h2,
+.glass-section-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e0e7ff;
+}
+
+/* ========================================
+   GLASSMORPHISM INPUTS & SELECTS
+   ======================================== */
+.glass-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(15, 15, 40, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #e0e7ff;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 
+        0 0 0 3px rgba(139, 92, 246, 0.1),
+        inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: rgba(20, 20, 50, 0.6);
+}
+
+.glass-input::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+}
+
+.glass-select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(15, 15, 40, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #e0e7ff;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-select:focus {
+    outline: none;
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 
+        0 0 0 3px rgba(139, 92, 246, 0.1),
+        inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-select option {
+    background: #1a1a2e;
+    color: #e0e7ff;
+}
+
+.glass-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(15, 15, 40, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #e0e7ff;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+    min-height: 100px;
+}
+
+.glass-textarea:focus {
+    outline: none;
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 
+        0 0 0 3px rgba(139, 92, 246, 0.1),
+        inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   GLASSMORPHISM BUTTONS
+   ======================================== */
+.glass-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-btn-primary {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    box-shadow: 
+        0 4px 15px rgba(124, 58, 237, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(124, 58, 237, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 1) 0%, rgba(167, 139, 250, 1) 100%);
+}
+
+.glass-btn-success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(5, 150, 105, 0.9) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    box-shadow: 
+        0 4px 15px rgba(16, 185, 129, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(16, 185, 129, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-btn-secondary {
+    background: rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #a78bfa;
+}
+
+.glass-btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: #c4b5fd;
+}
+
+.glass-btn-danger {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    box-shadow: 
+        0 4px 15px rgba(239, 68, 68, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(239, 68, 68, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Button Sizes */
+.glass-btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 8px;
+}
+
+.glass-btn-lg {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 12px;
+}
+
+/* ========================================
+   GLASSMORPHISM BADGES
+   ======================================== */
+.glass-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.glass-badge-primary {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.glass-badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.glass-badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+
+.glass-badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+}
+
+.glass-badge-info {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+/* ========================================
+   GLASSMORPHISM PROGRESS BAR
+   ======================================== */
+.glass-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(30, 30, 60, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 100px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.glass-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6, #a78bfa);
+    border-radius: 100px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.glass-progress-sm {
+    height: 4px;
+}
+
+.glass-progress-lg {
+    height: 10px;
+}
+
+/* ========================================
+   GLASSMORPHISM STATS CARD
+   ======================================== */
+.glass-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.glass-stat-card {
+    background: rgba(30, 30, 55, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.glass-stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.glass-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.25rem;
+}
+
+.glass-stat-label {
+    color: rgba(148, 163, 184, 0.9);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   GLASSMORPHISM TABS
+   ======================================== */
+.glass-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(30, 30, 55, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.5rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-tab {
+    padding: 0.6rem 1.25rem;
+    background: transparent;
+    border: none;
+    color: rgba(167, 139, 250, 0.7);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.glass-tab:hover {
+    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.glass-tab.active {
+    color: #fff;
+    background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* ========================================
+   GLASSMORPHISM TABLE
+   ======================================== */
+.glass-table-wrapper {
+    background: rgba(30, 30, 55, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.glass-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.glass-table th {
+    background: rgba(139, 92, 246, 0.1);
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-table td {
+    padding: 0.875rem 1rem;
+    font-size: 0.85rem;
+    color: #e0e7ff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.glass-table tr:hover td {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.glass-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================================
+   GLASSMORPHISM LIST
+   ======================================== */
+.glass-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.glass-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.glass-list-item:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.glass-list-item:last-child {
+    border-bottom: none;
+}
+
+/* ========================================
+   GLASSMORPHISM AVATAR
+   ======================================== */
+.glass-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.glass-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.glass-avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+}
+
+.glass-avatar-lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+}
+
+.glass-avatar-xl {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+/* ========================================
+   GLASSMORPHISM EMPTY STATE
+   ======================================== */
+.glass-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(139, 92, 246, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-empty-icon {
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.glass-empty-title {
+    font-size: 1.1rem;
+    color: rgba(167, 139, 250, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+.glass-empty-text {
+    font-size: 0.85rem;
+    color: rgba(148, 163, 184, 0.7);
+}
+
+/* ========================================
+   COMPACT GRID LAYOUTS
+   ======================================== */
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.compact-grid-sm {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.compact-grid-lg {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 1200px) {
+    .page-wrapper,
+    .page-wrapper-lg {
+        padding: 0 1.25rem;
+    }
+    
+    .compact-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper,
+    .page-wrapper-sm,
+    .page-wrapper-lg {
+        padding: 0 1rem;
+    }
+    
+    .glass-header {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .glass-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .glass-section {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+    
+    .compact-grid,
+    .compact-grid-sm,
+    .compact-grid-lg {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .glass-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .glass-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .glass-tab {
+        flex: 1;
+        min-width: fit-content;
+        text-align: center;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .glass-stat-value {
+        font-size: 1.25rem;
+    }
+}
