@@ -1,0 +1,10 @@
+# Override GitHub Linguist language detection
+# Force all PHP files to be detected as PHP, not Hack
+*.php linguist-language=PHP
+
+# Disable Hack detection entirely
+*.php linguist-detectable=true
+
+# Hide vendored or generated files from language stats
+/vendor/* linguist-vendored
+/database/prozone_complete.sql linguist-vendored
